@@ -1,16 +1,26 @@
-#include<iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/12 02:31:53 by ahammout          #+#    #+#             */
+/*   Updated: 2023/04/12 02:31:55 by ahammout         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-using   namespace std;
+#include <iostream>
 
 int main(int ac, char **av)
 {
-    int     i;
-    int     j;
-    char    holder;
+    int i;
+    int j;
+    char holder;
 
     i = 1;
     if (ac == 1)
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     else
     {
         while (av[i])
@@ -21,15 +31,15 @@ int main(int ac, char **av)
                 if (av[i][j] >= 97 && av[i][j] <= 122)
                 {
                     holder = av[i][j] - 32;
-                    cout << holder;
+                    std::cout << holder;
                 }
                 else
-                    cout << av[i][j];
+                    std::cout << av[i][j];
                 j++;
             }
             i++;
         }
     }
-    cout << "\n";
+    std::cout << "\n";
     return (0);
 }
