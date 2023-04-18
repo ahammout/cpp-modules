@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 02:01:15 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/18 07:11:30 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/18 07:21:56 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ std::string to_upper(std::string str)
 int main(void)
 {
     std::string input;
+    PhoneBook   PhoneBook_;
 
     while (1)
     {
@@ -37,6 +38,7 @@ int main(void)
         if (input.compare("ADD") == 0)
         {
             std::cout << ">";
+            PhoneBook_.add();
             /// ADD The contact;
         }
         else if (input.compare("SEARCH") == 0)
