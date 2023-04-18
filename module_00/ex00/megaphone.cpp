@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:31:53 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/12 02:31:55 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:34:55 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(int ac, char **av)
             {
                 if (av[i][j] >= 97 && av[i][j] <= 122)
                 {
-                    holder = av[i][j] - 32;
+                    holder = toupper(av[i][j]);
                     std::cout << holder;
                 }
                 else

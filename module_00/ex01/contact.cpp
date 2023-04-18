@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 01:52:59 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/18 06:32:23 by ahammout         ###   ########.fr       */
+/*   Created: 2023/04/12 19:55:30 by ahammout          #+#    #+#             */
+/*   Updated: 2023/04/18 02:07:26 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"PhoneBook.hpp"
 
-class PhoneBook
+class contact
 {
 private:
-    int curr_index;
-    /// Array of contacts: 8 Contacts.
-    new conta
-
+    std::string firstName;
+    std::string lastName;
+    std::string nickname;
+    std::string darkestSecret;
+    long        phoneNumber;
+    
 public:
-    PhoneBook(/* args */);
-    void    add();
-    void    search();
-    ~PhoneBook();
+    contact();
+    ~contact();
 };
+
+contact::contact()
+{
+    
+}
