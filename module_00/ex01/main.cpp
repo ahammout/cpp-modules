@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 02:01:15 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/18 02:49:20 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/18 07:11:30 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void)
         input = to_upper(input);
         if (input.compare("ADD") == 0)
         {
-            std::cout << "Adding contact";
+            std::cout << ">";
             /// ADD The contact;
         }
         else if (input.compare("SEARCH") == 0)
