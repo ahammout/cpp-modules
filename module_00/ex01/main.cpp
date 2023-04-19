@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 02:01:15 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/18 07:21:56 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/19 03:05:38 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,9 @@ int main(void)
         std::cin >> input;
         input = to_upper(input);
         if (input.compare("ADD") == 0)
-        {
-            std::cout << ">";
             PhoneBook_.add();
-            /// ADD The contact;
-        }
         else if (input.compare("SEARCH") == 0)
-        {
-            std::cout << "Search for contact";
-            /// Search for contact;
-        }
+            PhoneBook_.search();
         else if (input.compare("EXIT") == 0)
         {
             /// Exit the Phonebook And destroy data;

@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 06:55:39 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/18 07:16:02 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/19 03:02:08 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,18 @@ private:
     std::string firstName;
     std::string lastName;
     std::string nickName;
-    std::string darkestSecret;
     std::string phoneNumber;
-    
-public:
-    Contact();
-    std::string getFirstName();
-    std::string getLastName();
-    std::string getNickName();
-    std::string getDarkestSecret();
-    std::string getPhoneNumber();
+    std::string darkestSecret;
+    // int         order;
 
+public:
     void    insertFirstName();
     void    insertLastName();
     void    insertNickName();
-    void    insertDarkestSecret();
     void    insertPhoneNumber();
+    void    insertDarkestSecret();
+
+std::string getElement(std::string Element);
 };
 
 #endif

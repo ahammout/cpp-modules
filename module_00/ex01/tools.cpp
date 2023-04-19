@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   tools.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 06:59:37 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/19 03:07:23 by ahammout         ###   ########.fr       */
+/*   Created: 2023/04/19 02:41:00 by ahammout          #+#    #+#             */
+/*   Updated: 2023/04/19 03:07:18 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-#include<iostream>
-#include<string>
-#include "Contact.hpp"
+// int ft_strlen(char *str)
+// {
+//     int i;
 
-class PhoneBook
-{
-private:
-    /// Array of contacts: 8 Contacts.
-    Contact contacts[8];
-    int     size;
+//     i = 0;
+//     while (str[i])
+//         i++;
+//     return (i);
+// }
 
-public:
-    PhoneBook();
-    void    add();
-    void    search();
-    void    exit();
-    void    displayContacts();
-};
+// void    ft_putnstr(char *str, int len)
+// {
+//     int i;
 
-#endif
-
+//     i = 0;
+//     while (i <= len)
+//     {
+//         std::cout << str[i];
+//         i++;
+//     }
+// }

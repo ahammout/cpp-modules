@@ -6,30 +6,32 @@
 #    By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 18:06:29 by ahammout          #+#    #+#              #
-#    Updated: 2023/04/18 02:46:01 by ahammout         ###   ########.fr        #
+#    Updated: 2023/04/19 03:07:34 by ahammout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = PhoneBook
 
-INCLUDES = PhoneBook.hpp
+INCLUDES =	PhoneBook.hpp \
+			Contact.hpp \
 
 SRCS =	main.cpp \
 		PhoneBook.cpp \
+		Contact.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-%.o : %.cpp $(INCLUDES)
-	@$(CC) $(CFLAGS) -c $< -o <@
+%.o: %.cpp  $(INCLUDES)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): all
+all: $(NAME)
 
-all: $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDES) -o $(NAME)
+$(NAME): $(OBJS) $(INCLUDES)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	@rm -rf $(OBJS)
