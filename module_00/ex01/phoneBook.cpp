@@ -1,65 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 01:52:59 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/19 23:53:45 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/21 01:04:37 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"PhoneBook.hpp"
+#include"Contact.hpp"
 
 PhoneBook::PhoneBook(){
     size = -1;
 }
 
-int ft_strlen(std:: string str)
+void    PhoneBook::displayContact(int index)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
-void    ft_putnstr(std::string str, int len)
-{
-    int i;
-
-    i = 0;
-    while (i < len)
-    {
-        std::cout << str[i];
-        i++;
-    }
-}
-
-void    renderStr(std::string str)
-{
-    int i;
-    int sp;
-
-    i = 0;
-    if (ft_strlen(str) <= 10)
-    {
-        sp = 10 - ft_strlen(str);
-        while (sp > 0)
-        {
-            std::cout << " ";
-            sp--;
-        }
-        ft_putnstr(str, ft_strlen(str) + 1);
-    }
-    else
-    {
-        ft_putnstr(str, 9);
-        std::cout << ".";
-    }
-    std::cout << "|";
+    std::cout << "first name    : ";
+    std::cout << contacts[index].getElement(1) << std::endl;
+    std::cout << "last name     : ";
+    std::cout << contacts[index].getElement(2) << std::endl;
+    std::cout << "nick name     : ";
+    std::cout << contacts[index].getElement(3) << std::endl;
+    std::cout << "Phone Number  : ";
+    std::cout << contacts[index].getElement(4) << std::endl;
+    std::cout << "darkest secret: ";
+    std::cout << contacts[index].getElement(5) << std::endl;
 }
 
 void    PhoneBook::displayList(){
@@ -69,52 +38,66 @@ void    PhoneBook::displayList(){
     while (i <= size)
     {
         std::cout << "         "<< i << "|";
-        renderStr(contacts[i].getFirstName());
-        renderStr(contacts[i].getLastName());
-        renderStr(contacts[i].getNickName());
+        renderStr(contacts[i].getElement(1));
+        renderStr(contacts[i].getElement(2));
+        renderStr(contacts[i].getElement(3));
         std::cout << std::endl;
         i++;
     }
 }
 
-void    PhoneBook::displayContact(int index)
+bool    PhoneBook::search()
 {
-    std::cout << "first name    : ";
-    std::cout << contacts[index].getFirstName() << std::endl;
-    std::cout << "last name     : ";
-    std::cout << contacts[index].getLastName() << std::endl;
-    std::cout << "nick name     : ";
-    std::cout << contacts[index].getNickName() << std::endl;
-    std::cout << "Phone Number  : ";
-    std::cout << contacts[index].getPhoneNumber() << std::endl;
-    std::cout << "darkest secret: ";
-    std::cout << contacts[index].getDarkestSecret() << std::endl;
+    std::string tmp;
+    int         c;
+
+    if (size >= 0)
+    {
+        displayList();
+        std::cout << "Choose an index: ";
+        getline(std::cin, tmp);
+        if (!all_isdigit(tmp))
+            return (puts("Choice must countain only digits"), false);
+        c = std::stoi(tmp);
+        if (c >= 0 && c <= 8)
+        {
+            tmp.erase();
+            tmp = contacts[c].getElement(1);
+            if (tmp.length() <= 0)
+                return(puts("Contacts deosn't exist"), false);
+            displayContact(c);
+        }
+        else
+            return (puts("relevant behavior"), false);
+    }
+    return (true);
 }
 
-void    PhoneBook::search()
+bool    PhoneBook::add()
 {
-    std::string choice;
-    int         index;
+    int i;
 
-    displayList();
-    std::cout << "Chose the contact index: ";
-    getline(std::cin, choice);
-    index = std::stoi(choice);
-    if (index >= 0 && index <= 8)
-        displayContact(index);
-    else
-        std::cout << "relevant behavior" << std::endl;
-    
-}
-
-void    PhoneBook::add()
-{
+    i = 0;
     size++;
-    contacts[size].insertFirstName();
-    contacts[size].insertLastName();
-    contacts[size].insertNickName();
-    contacts[size].insertPhoneNumber();
-    contacts[size].insertDarkestSecret();
-    if (size == 7)
-        size = 0;
+    if (size == 8)
+    {
+        contacts[i].removeContact();
+        while (i < 7)
+        {
+            contacts[i] = contacts[i + 1]; 
+            i++;
+        }
+        size--;
+    }
+    if (contacts[size].insertFirstName() == false)
+        return (contacts[size].removeContact(), (size--), false);
+    if (contacts[size].insertLastName() == false)
+        return (contacts[size].removeContact(), (size--), false);
+    if (contacts[size].insertNickName() == false)
+        return (contacts[size].removeContact(), (size--), false);
+    if (contacts[size].insertPhoneNumber() == false)
+        return (contacts[size].removeContact(), (size--), false);
+    if (contacts[size].insertDarkestSecret() == false)
+        return (contacts[size].removeContact(), (size--), false);
+    return (true);
 }

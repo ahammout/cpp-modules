@@ -6,7 +6,7 @@
 #    By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 18:06:29 by ahammout          #+#    #+#              #
-#    Updated: 2023/04/19 23:27:37 by ahammout         ###   ########.fr        #
+#    Updated: 2023/04/20 22:33:48 by ahammout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ INCLUDES =	PhoneBook.hpp \
 SRCS =	main.cpp \
 		PhoneBook.cpp \
 		Contact.cpp \
+		utils.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

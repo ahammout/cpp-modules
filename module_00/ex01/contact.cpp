@@ -6,103 +6,101 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:55:30 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/20 00:35:26 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/20 23:00:35 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include"Contact.hpp"
 #include"PhoneBook.hpp"
 
-std::string Contact::getFirstName()
+std::string Contact::getElement(int attr)
 {
-    return (firstName);
+    if (attr == 1)
+        return (firstName);
+    if (attr == 2)
+        return (lastName);
+    if (attr == 3)
+        return (nickName);
+    if (attr == 4)
+        return (phoneNumber);
+    if (attr == 5)
+        return (darkestSecret);
+    return (0);
 }
 
-std::string Contact::getLastName()
+void    Contact::removeContact()
 {
-    return (lastName);
+    if (!firstName.empty())
+        firstName.erase();
+    if (!lastName.empty())
+        lastName.erase();
+    if (!nickName.empty())
+        nickName.erase();
+    if (!phoneNumber.empty())
+        phoneNumber.erase();
+    if (!darkestSecret.empty())
+        darkestSecret.erase();
 }
 
-std::string Contact::getNickName()
+bool    Contact::insertFirstName()
 {
-    return (nickName);
-}
-
-std::string Contact::getPhoneNumber()
-{
-    return (phoneNumber);
-}
-
-std::string Contact::getDarkestSecret()
-{
-    return (darkestSecret);
-}
-
-int Contact::insertFirstName(){
     std::string input;
 
     std::cout << "first name > ";
     getline(std::cin, input);
     if (input.empty())
-    {
-        std::cout << "PhoneBook doesn't support empty fields" << std::endl;
-        return (0);
-    }
-    return (1);
+        return (puts("PhoneBook doesn't support empty field"), false);
+    firstName = input;
+    return (true);
 }
 
-int Contact::insertLastName(){
+bool    Contact::insertLastName()
+{
     std::string input;
 
     std::cout << "last name > ";
     getline(std::cin, input);
     if (input.empty())
-    {
-        std::cout << "PhoneBook doesn't support empty fields" << std::endl;
-        return (0);
-    }
-    return (1);
+        return (puts("PhoneBook doesn't support empty field"), false);
+    lastName = input;
+    return (true);
 }
 
-int Contact::insertNickName(){
+bool    Contact::insertNickName()
+{
     std::string input;
 
     std::cout << "nick name > ";
     getline(std::cin, input);
     if (input.empty())
-    {
-        std::cout << "PhoneBook doesn't support empty fields" << std::endl;
-        return (0);
-    }
-    return (1);
+        return (puts("PhoneBook doesn't support empty field"), false);
+    nickName = input;
+    return (true);
 }
 
-int Contact::insertPhoneNumber(){
+bool    Contact::insertPhoneNumber()
+{
     std::string input;
-    long long   number;
 
     std::cout << "phone nubmer > ";
     getline(std::cin, input);
     if (input.empty())
-    {
-        std::cout << "PhoneBook doesn't support empty fields" << std::endl;
-        return (0);
-    }
-    number = std::stoi(input);
-    return (1);
+        return (puts("PhoneBook doesn't support empty field"), false);
+    if (!all_isdigit(input))
+        return (puts("Phone number must countain only digits"), false);
+    phoneNumber = input;
+    return (true);
 }
 
-int Contact::insertDarkestSecret(){
+bool    Contact::insertDarkestSecret()
+{
     std::string input;
 
     std::cout << "darkest secret > ";
     getline(std::cin, input);
     if (input.empty())
-    {
-        std::cout << "PhoneBook doesn't support empty fields" << std::endl;
-        return (0);
-    }
-    return (1);
+        return (puts("PhoneBook doesn't support empty field"), false);
+    darkestSecret = input;
+    return (true);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 02:01:15 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/19 23:47:31 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/21 00:51:24 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ std::string to_upper(std::string str)
 int main(void)
 {
     std::string input;
+
     PhoneBook   PhoneBook_;
     std::cout << "Phonebook options:  [ ADD ]   |    [ SEARCH ]   |     [ EXIT ]" << "\n";
     while (1)
