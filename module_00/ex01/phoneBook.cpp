@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 01:52:59 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/21 01:04:37 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:19:39 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ bool    PhoneBook::search()
             tmp.erase();
             tmp = contacts[c].getElement(1);
             if (tmp.length() <= 0)
-                return(puts("Contacts deosn't exist"), false);
+                return(puts("Contact deosn't exist"), false);
             displayContact(c);
         }
         else
