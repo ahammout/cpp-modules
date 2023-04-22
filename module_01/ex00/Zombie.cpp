@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 22:31:32 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/21 23:39:45 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/22 00:18:55 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 void    Zombie::announce(void)
 {
-    std::cout << name << ": BraiiiiiiinnnzzzZ...";
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void    Zombie::newZomb(std::string zname)
+void    Zombie::newZombie(std::string zname)
 {
     name = zname;
-}
-
-Zombie::~Zombie()
-{
-    delete  
 }

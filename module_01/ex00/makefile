@@ -6,7 +6,7 @@
 #    By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/21 23:13:22 by ahammout          #+#    #+#              #
-#    Updated: 2023/04/21 23:37:31 by ahammout         ###   ########.fr        #
+#    Updated: 2023/04/22 00:23:15 by ahammout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ INCLUDES = Zombie.hpp
 SRCS =	main.cpp \
 		Zombie.cpp \
 		newZombie.cpp \
-		# randomChump.cpp \
+		randomChump.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
