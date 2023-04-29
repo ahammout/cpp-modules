@@ -5,28 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 01:42:29 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/29 16:52:28 by ahammout         ###   ########.fr       */
+/*   Created: 2023/04/29 17:24:31 by ahammout          #+#    #+#             */
+/*   Updated: 2023/04/29 17:37:51 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#include<iostream>
 
 int main(void)
 {
-    Zombie  *zombie;
-    int     N;
-    int     i;
+    std::string message = "HI THIS IS BRAIN";
+    std::string stringPTR = message;
+    std::string *stringREF = &message;
 
-    N = 10;
-    zombie = zombieHorde(N, "Abdelkadir Zombie");
-    //// Announce zombies
-    i = 0;
-    while (i < N)
-    {
-        zombie[i].announce();
-        i++;
-    }
-    delete[] zombie;
+    std::cout << "address: " << &message << std::endl;
+    std::cout << "address: " << &stringPTR << std::endl;
+    std::cout << "address: " << stringREF << std::endl;
+    
+    std::cout << "Value: " << message << std::endl;
+    std::cout << "Value: " << stringPTR << std::endl;
+    std::cout << "Value: " << *stringREF << std::endl;
     return (0);
 }

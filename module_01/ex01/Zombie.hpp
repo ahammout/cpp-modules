@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 01:44:37 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/22 01:47:37 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:38:36 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ class   Zombie
     std::string name;
 
     public:
-    Zombie();
-    void    newZombie(std::string name);
+    void    newZombie(std::string zname);
     void    announce(void);
-    ~Zombie();
 };
 
 Zombie* zombieHorde( int N, std::string name);
