@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:13:36 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/22 01:39:47 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/04/30 21:02:40 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ int main(void)
 {
     Zombie  *zombie;
 
-    zombie = newZombie("karolzzzzzzzz");
+    zombie = newZombie("3mi 7dooo");
     zombie->announce();
     delete zombie;
-    randomChump("jaaackzzzzzz");
-    sleep(10);
+    randomChump("lbaaatol");
     return (0);
 }

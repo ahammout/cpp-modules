@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 22:29:21 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/30 21:01:47 by ahammout         ###   ########.fr       */
+/*   Created: 2023/04/29 17:52:32 by ahammout          #+#    #+#             */
+/*   Updated: 2023/04/30 16:45:44 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include<iostream>
 
-class   Zombie
+class Weapon
 {
     private:
-    std::string name;
+    std::string type;
 
     public:
-    void    newZombie(std::string name);
-    void    announce(void);
+    std::string getType()
 };
-
-Zombie* newZombie( std::string name);
-void randomChump( std::string name );
 
 #endif
