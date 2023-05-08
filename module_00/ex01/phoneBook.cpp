@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 01:52:59 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/08 14:41:11 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:45:33 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 PhoneBook::PhoneBook(){
     size = -1;
+}
+
+PhoneBook::~PhoneBook(){
 }
 
 void    PhoneBook::displayContact(int index)
@@ -46,7 +49,7 @@ void    PhoneBook::displayList(){
     }
 }
 
-bool    PhoneBook::search()
+void    PhoneBook::search()
 {
     std::string tmp;
     int         c;
@@ -58,29 +61,39 @@ bool    PhoneBook::search()
         {
             std::cout << "Choose an index: ";
             getline(std::cin, tmp);
+            if (std::cin.eof())
+            {
+                puts("\nEXIT");
+                exit (0);
+            }
             if (tmp.length() > 0)
             {
                 if (!all_isdigit(tmp))
-                    return (puts("Choice must countain only digits"), false);
+                {
+                    puts("Choice must countain only digits");
+                    continue;
+                }
                 c = std::stoi(tmp);
                 if (c >= 0 && c <= 8)
                 {
                     tmp.erase();
                     tmp = contacts[c].getElement(1);
                     if (tmp.length() <= 0)
-                        return(puts("Contact deosn't exist"), false);
+                    {
+                        puts("Contact doesn't exist");
+                        continue;
+                    }
                     displayContact(c);
                     break;
                 }
                 else
-                    return (puts("relevant behavior"), false);
+                    puts("Undefined behavior");
             }
         }
     }
-    return (true);
 }
 
-bool    PhoneBook::add()
+void    PhoneBook::add()
 {
     int i;
 
@@ -96,15 +109,9 @@ bool    PhoneBook::add()
         }
         size--;
     }
-    if (contacts[size].insertFirstName() == false)
-        return (contacts[size].removeContact(), (size--), false);
-    if (contacts[size].insertLastName() == false)
-        return (contacts[size].removeContact(), (size--), false);
-    if (contacts[size].insertNickName() == false)
-        return (contacts[size].removeContact(), (size--), false);
-    if (contacts[size].insertPhoneNumber() == false)
-        return (contacts[size].removeContact(), (size--), false);
-    if (contacts[size].insertDarkestSecret() == false)
-        return (contacts[size].removeContact(), (size--), false);
-    return (true);
+    contacts[size].insertFirstName();
+    contacts[size].insertLastName();
+    contacts[size].insertNickName();
+    contacts[size].insertPhoneNumber();
+    contacts[size].insertDarkestSecret();
 }

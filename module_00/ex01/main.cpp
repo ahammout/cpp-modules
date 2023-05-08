@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 02:01:15 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/08 18:07:42 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:06:39 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ int main(void)
     std::cout << "Phonebook options:  [ ADD ]   |    [ SEARCH ]   |     [ EXIT ]" << "\n";
     while (1)
     {
-        std::cout << "> ";
+        std::cout << "Phonebook> ";
         getline(std::cin, input);
+        if (std::cin.eof())
+            break;
         if (input.length() > 0)
         {
             input = to_upper(input);

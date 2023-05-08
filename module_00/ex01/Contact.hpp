@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 06:55:39 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/08 18:39:15 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:03:59 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ private:
 
 public:
     std::string getElement(int attr);
-    bool    insertFirstName();
-    bool    insertLastName();
-    bool    insertNickName();
-    bool    insertPhoneNumber();
-    bool    insertDarkestSecret();
+    void    insertFirstName();
+    void    insertLastName();
+    void    insertNickName();
+    void    insertPhoneNumber();
+    void    insertDarkestSecret();
     void    removeContact();
 };
 
