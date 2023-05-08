@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 02:01:15 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/21 22:21:21 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:07:42 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,16 @@ int main(void)
     {
         std::cout << "> ";
         getline(std::cin, input);
-        input = to_upper(input);
-        if (input.compare("ADD") == 0)
-            PhoneBook_.add();
-        else if (input.compare("SEARCH") == 0)
-            PhoneBook_.search();
-        else if (input.compare("EXIT") == 0)            
-            break;
+        if (input.length() > 0)
+        {
+            input = to_upper(input);
+            if (input.compare("ADD") == 0)
+                PhoneBook_.add();
+            else if (input.compare("SEARCH") == 0)
+                PhoneBook_.search();
+            else if (input.compare("EXIT") == 0)
+                break;
+        }
     }
     std::cout << "EXIT" << "\n";
     return (0);

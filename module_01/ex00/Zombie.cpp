@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 22:31:32 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/22 00:18:55 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:25:15 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,9 @@ void    Zombie::announce(void)
 void    Zombie::newZombie(std::string zname)
 {
     name = zname;
+}
+
+Zombie::~Zombie()
+{
+    std::cout << "deconstractor call" << std::endl;
 }

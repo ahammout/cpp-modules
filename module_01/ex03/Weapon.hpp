@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:52:32 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/02 16:00:37 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 19:02:06 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Weapon
     Weapon(std::string ArmTyp);
     const std::string getType();
     void    setType(std::string Type);
+    ~Weapon();
 };
 
 #endif

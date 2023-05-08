@@ -6,13 +6,13 @@
 #    By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 18:06:29 by ahammout          #+#    #+#              #
-#    Updated: 2023/04/20 22:33:48 by ahammout         ###   ########.fr        #
+#    Updated: 2023/05/08 17:42:07 by ahammout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = PhoneBook
 

@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 01:52:59 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/21 22:19:39 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 14:41:11 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,28 @@ bool    PhoneBook::search()
     if (size >= 0)
     {
         displayList();
-        std::cout << "Choose an index: ";
-        getline(std::cin, tmp);
-        if (!all_isdigit(tmp))
-            return (puts("Choice must countain only digits"), false);
-        c = std::stoi(tmp);
-        if (c >= 0 && c <= 8)
+        while (1)
         {
-            tmp.erase();
-            tmp = contacts[c].getElement(1);
-            if (tmp.length() <= 0)
-                return(puts("Contact deosn't exist"), false);
-            displayContact(c);
+            std::cout << "Choose an index: ";
+            getline(std::cin, tmp);
+            if (tmp.length() > 0)
+            {
+                if (!all_isdigit(tmp))
+                    return (puts("Choice must countain only digits"), false);
+                c = std::stoi(tmp);
+                if (c >= 0 && c <= 8)
+                {
+                    tmp.erase();
+                    tmp = contacts[c].getElement(1);
+                    if (tmp.length() <= 0)
+                        return(puts("Contact deosn't exist"), false);
+                    displayContact(c);
+                    break;
+                }
+                else
+                    return (puts("relevant behavior"), false);
+            }
         }
-        else
-            return (puts("relevant behavior"), false);
     }
     return (true);
 }

@@ -6,12 +6,12 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 06:55:39 by ahammout          #+#    #+#             */
-/*   Updated: 2023/04/20 22:30:10 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:39:15 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-#define CONTACT_H
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include<iostream>
 
