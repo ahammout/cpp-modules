@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:24:31 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/09 16:48:53 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:00:48 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main(void)
     std::cout << message << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
+    
     return (0);
 }

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/29 17:49:37 by ahammout          #+#    #+#              #
-#    Updated: 2023/05/10 18:38:22 by ahammout         ###   ########.fr        #
+#    Created: 2023/05/13 18:11:39 by ahammout          #+#    #+#              #
+#    Updated: 2023/05/13 18:12:11 by ahammout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,12 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = UnnecessaryViolence
+NAME = Harl
 
-INCLUDES = Weapon.hpp HumanA.hpp HumanB.hpp
+INCLUDES = Harl.hpp
 
 SRCS =	main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
+		Harl.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -40,4 +38,3 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-

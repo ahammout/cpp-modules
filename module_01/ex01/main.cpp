@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 01:42:29 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/09 00:49:15 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:59:15 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
     int     i;
 
     N = 99;
-    zombie = zombieHorde(N, "Abdelkadir Zombie");
+    zombie = zombieHorde(N, "Zombie");
     i = 0;
     while (i < N)
     {

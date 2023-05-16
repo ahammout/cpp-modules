@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 23:13:36 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/16 15:52:11 by ahammout         ###   ########.fr       */
+/*   Created: 2023/05/10 18:41:11 by ahammout          #+#    #+#             */
+/*   Updated: 2023/05/15 17:32:37 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#include"Fed.hpp"
 
-#include<unistd.h>
-#include <stdlib.h>
-
-int main(void)
+int main(int ac, char **av)
 {
-    Zombie  *zombie;
-
-    zombie = newZombie("T-Dog");
-    zombie->announce();
-    delete zombie;
-    randomChump("Rick");
+    Fed Fed;
+    
+    if (ac != 4)
+        return (puts(" > USAGE: ./Fed [File] [word1] [word2]"), 1);
+    Fed.fileTransform(av);
     return (0);
 }

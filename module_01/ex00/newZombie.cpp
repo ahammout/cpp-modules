@@ -6,7 +6,7 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:31:52 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/09 00:48:30 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:41:31 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ Zombie* newZombie( std::string name)
 
     zombie = new Zombie;
     zombie->newZombie(name);
-    return (zombie);----
+    return (zombie);
 }

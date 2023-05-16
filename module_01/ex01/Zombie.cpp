@@ -6,17 +6,15 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 16:24:27 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/09 00:52:00 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/15 19:14:31 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Zombie.hpp"
 
-Zombie::Zombie(){
-}
+Zombie::Zombie(){}
 
-Zombie::~Zombie(){
-}
+Zombie::~Zombie(){}
 
 void    Zombie::announce(void)
 {

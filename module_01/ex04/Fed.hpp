@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 23:13:36 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/16 15:52:11 by ahammout         ###   ########.fr       */
+/*   Created: 2023/05/10 18:43:00 by ahammout          #+#    #+#             */
+/*   Updated: 2023/05/15 17:33:51 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#ifndef FED_HPP
+#define FED_HPP
 
-#include<unistd.h>
-#include <stdlib.h>
+#include<iostream>
+#include<fstream>
+#include<string>
 
-int main(void)
+class Fed
 {
-    Zombie  *zombie;
+    private:
+    std::fstream infile;
+    std::fstream outfile;
+    
+    public:
+    Fed();
+    bool    fileTransform(char **av);
+    ~Fed();
+};
 
-    zombie = newZombie("T-Dog");
-    zombie->announce();
-    delete zombie;
-    randomChump("Rick");
-    return (0);
-}
+std::string replace(std::string str, std::string word1, std::string word2);
+#endif

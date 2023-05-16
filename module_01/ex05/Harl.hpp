@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 23:13:36 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/16 15:52:11 by ahammout         ###   ########.fr       */
+/*   Created: 2023/05/13 18:12:23 by ahammout          #+#    #+#             */
+/*   Updated: 2023/05/15 20:31:50 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include<unistd.h>
-#include <stdlib.h>
+#include<iostream>
 
-int main(void)
+class   Harl
 {
-    Zombie  *zombie;
+    private:
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
 
-    zombie = newZombie("T-Dog");
-    zombie->announce();
-    delete zombie;
-    randomChump("Rick");
-    return (0);
-}
+    public:
+    Harl();
+    void complain(std::string level);
+    ~Harl();
+};
+
+typedef void    (Harl::*ptrF)(void);
+
+#endif

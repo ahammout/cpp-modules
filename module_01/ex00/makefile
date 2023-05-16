@@ -6,13 +6,13 @@
 #    By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/21 23:13:22 by ahammout          #+#    #+#              #
-#    Updated: 2023/04/22 00:23:15 by ahammout         ###   ########.fr        #
+#    Updated: 2023/05/10 18:37:46 by ahammout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = BraiiiiiiinnnzzzZ
 

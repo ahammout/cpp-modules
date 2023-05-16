@@ -6,26 +6,29 @@
 /*   By: ahammout <ahammout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 21:39:53 by ahammout          #+#    #+#             */
-/*   Updated: 2023/05/08 19:02:47 by ahammout         ###   ########.fr       */
+/*   Updated: 2023/05/15 19:13:58 by ahammout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Weapon.hpp"
 
-Weapon::Weapon(std::string ArmType)
+Weapon::Weapon() {}
+
+Weapon::Weapon(std::string typeTMP)
 {
-    type = ArmType;
+    type = typeTMP;
 }
 
-Weapon::~Weapon(){
+const std::string& Weapon::getType()
+{
+    std::string &typeREF = type;
+
+    return ((const std::string&)typeREF);
 }
 
-const std::string Weapon::getType()
+void    Weapon::setType(std::string typeTMP)
 {
-    return (type);
+    type = typeTMP;
 }
 
-void    Weapon::setType(std::string Type)
-{
-    type = Type;
-}
+Weapon::~Weapon() {}
